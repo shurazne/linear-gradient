@@ -49,6 +49,10 @@ button {
     flex-direction: column
 }
 
+.slicknav_menu {
+    display:none;
+}
+
 .container {
     max-width: 1114px;
     padding: 0 15px;
@@ -61,7 +65,7 @@ button {
    box-shadow: 0px 4px 20px rgba(32, 228, 179, 0.85);
    border-radius: 30px;
    cursor: pointer;
-   /* margin-top: 44px; */
+   
 }
 
 .btn-default:hover {
@@ -81,33 +85,31 @@ button {
 .header {
     padding: 40px 0;
     position: absolute;
-    top: 0;
     left: 0;
+    top: 0;
     width: 100%;
-    /* background-color: crimson; */
- }
-
-.logo {
-    margin-right: 65px;
-}
-
-.main-header-nav-Contact {
+   
+  }
+  
+  .header-nav {
     flex-grow: 1;
-}
-
-.main-header-nav {
-    color: #ffff;
+  }
+  
+  .main-header-nav {
+    color: #29375A;
     font-weight: 700;
-}
-
-.main-header-nav + .main-header-nav {
+    margin-left: 66px;
+  }
+  
+  .main-header-nav + .main-header-nav,
+  .info-header-nav + .info-header-nav {
     margin-left: 30px;
-}
-
-.info-header-nav  {
-    font-weight: 400;
+  }
+  
+  .info-header-nav {
     color: rgba(255, 255, 255, 0.8);
-}
+    margin-left: auto;
+  }
 
 .main {
       overflow: hidden;
@@ -125,7 +127,8 @@ button {
 
 .inner-call-to-action::before {
     content: '';
-    width: 1849px;
+    max-width: 1849px;
+    width: 100%;
     height: 1849px; 
     background: url(../img/Ellipse1.png) no-repeat;
     position: absolute;
@@ -136,7 +139,8 @@ button {
 
 .inner-call-to-action::after {
     content: '';
-    width: 658px;
+    max-width: 658px;
+    width: 100%;
     height: 571px;
     background: url(../img/28465161.png) no-repeat;
     position: absolute;
@@ -156,6 +160,7 @@ button {
 .inner-call-to-action-p {
     margin-top: 15px;
     max-width: 383px;
+    width: 100%;
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
@@ -180,6 +185,7 @@ button {
 
 .No-Sign-Up-Required {
     max-width: 240px;
+    width: 100%;
     margin-top: 15px;
 }
 
@@ -189,6 +195,7 @@ button {
 
 .footer-email {
     max-width: 490px;
+    width: 100%;
 }
 
 .footer-span-email{
@@ -212,7 +219,8 @@ button {
 }
 
 .footer-item {
-    width: 164px;
+    max-width: 164px;
+    width: 100%;
     height: 164px;
     background-color: transparent;
     border: 1px solid  transparent;
@@ -253,9 +261,167 @@ button {
    content: '';
    background: url(../img/Ellipse2.png)  no-repeat;
    position: absolute;
-   width: 1200px;
-   height: 300px;
+   max-width: 1200px;
+   width: 100%;
+   max-height: 300px;
    right: 0px;
    bottom: -160px;
    z-index: -1;
+}
+
+@media (max-width:991px) {
+    .inner-call-to-action,
+    .footer {
+        margin-left: 15px;
+    } 
+    .inner-call-to-action::after {
+        background-size: 60% auto;
+        left: 310px;
+        top: 235px;
+        z-index: -1;
+    }
+
+    .main {
+        padding-bottom: 180px;
+        padding-top: 75px;
+    }
+
+    .container {
+        padding: 0 40px;
+    }
+
+    .footer-list {
+        flex-wrap: wrap;
+    }
+
+    .footer-list {
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+
+    .footer-list::after {
+        display: none;
+    }
+
+}
+
+@media (max-width:767px) {
+    .slicknav_menu {
+        display: block;
+       z-index: 1;
+       margin-left: auto;
+    }
+
+    .header {
+        padding: 20px 0;
+    }
+
+    .header-nav {
+        display: none;
+    }
+
+    .main-header-nav + .main-header-nav, .info-header-nav + .info-header-nav {
+         margin-left: 0px;
+        }
+
+        .main-header-nav {
+            font-weight: 400;
+            margin-left: 0px;
+        }
+
+        .inner-call-to-action-title {
+            font-size: 30px;
+        }
+
+        .inner-call-to-action-p {
+            margin-top: 10px;
+            font-size: 15px;
+        }
+
+        .test-your-email {
+            margin-top: 35px;
+        }
+
+        .footer-title {
+            margin-top: 15px;
+            font-size: 2.2rem;
+        }
+
+        .footer-item {
+            max-width: 130px;
+            height: 130px;
+        }
+
+        .inner-call-to-action::before {
+            top: -180px;
+        }
+
+        .inner-call-to-action::after {
+            background-size: 60% auto;
+            left: 200px;
+            top: 140px;
+        }
+}
+
+@media (max-width: 479px) {
+    .header {
+        padding: 15px 0;
+    }
+
+    .main {
+        padding-bottom: 100px;
+        padding-top: 50px;
+    }
+
+    .inner-call-to-action-title {
+        font-size: 20px;
+    }
+
+    .inner-call-to-action-p {
+        margin-top: 10px;
+        font-size: 12px;
+    }
+
+    .test-your-email {
+        margin-top: 25px;
+    }
+
+    .btn {
+        font-size: 12px;
+    }
+    
+    .No-Sign-Up-Required {
+        max-width: 180px;
+    }
+
+    .No-Sign {
+        margin-left: 9px;
+    }
+    .inner-call-to-action::before {
+        background-size: 210% auto;
+        top: -50px;
+    }
+
+
+    .inner-call-to-action::after {
+        left: 130px;
+        top: 100px;
+    }
+
+
+    .footer-span-email {
+    font-size: 14px;
+    margin-bottom: 18px;
+    }   
+
+    .footer-title {
+        margin-top: 15px;
+        font-size: 2rem;
+    }
+
+    .footer-item {
+        max-width: 110px;
+        height: 110px;
+
+
 }
